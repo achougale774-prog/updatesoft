@@ -36,6 +36,7 @@ export async function POST(request: NextRequest) {
 ${data.message || data.current_challenges || 'No message provided.'}
 ---------------------------
 Check your dashboard for details.
+      `,
     }
 
     if (process.env.EMAIL_PASS) {
