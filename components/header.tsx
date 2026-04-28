@@ -3,7 +3,7 @@
 import { useState, useRef, useEffect } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Menu, X, ChevronDown, Moon, Sun, Globe } from "lucide-react"
+import { Menu, X, ChevronDown, Moon, Sun, Globe, Volume2 } from "lucide-react"
 import { useLanguage } from "@/components/language-provider"
 import { useTheme } from "next-themes"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
@@ -234,6 +234,24 @@ export function Header() {
 
           {/* CTA and Settings */}
           <div className="hidden lg:flex items-center gap-4">
+            {/* Audio Button */}
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => {
+                const text = language === 'mr' 
+                  ? "विनसॉफ्ट डिजिटल सोल्यूशन्स मध्ये आपले स्वागत आहे. आम्ही दुग्ध, साखर आणि सुवर्ण उद्योगांसाठी प्रगत सॉफ्टवेअर देतो."
+                  : "Welcome to Winsoft Digital Solutions. We provide advanced software for Dairy, Sugar, and Gold industries."
+                const utterance = new SpeechSynthesisUtterance(text)
+                utterance.lang = language === 'mr' ? 'mr-IN' : 'en-US'
+                window.speechSynthesis.speak(utterance)
+              }}
+              className="h-9 px-3 gap-2 border-orange-200 bg-orange-50 dark:bg-orange-950/20 dark:border-orange-900/30 text-orange-700 dark:text-orange-400"
+            >
+              <Volume2 className="w-4 h-4" />
+              <span className="text-xs font-bold">{language === 'mr' ? "माहिती ऐका" : "Listen"}</span>
+            </Button>
+
             <Select value={language} onValueChange={(val: any) => setLanguage(val)}>
               <SelectTrigger className="w-[120px] h-9">
                 <Globe className="w-4 h-4 mr-2" />
