@@ -265,9 +265,32 @@ export function Header() {
             </Link>
           </div>
 
-          {/* Mobile menu button */}
-          <div className="lg:hidden">
-            <Button variant="ghost" size="sm" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+          {/* Mobile menu and settings */}
+          <div className="lg:hidden flex items-center gap-2">
+            <Select value={language} onValueChange={(val: any) => setLanguage(val)}>
+              <SelectTrigger className="w-[100px] h-8 text-xs px-2">
+                <Globe className="w-3 h-3 mr-1" />
+                <SelectValue placeholder="Lang" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="en">EN</SelectItem>
+                <SelectItem value="mr">MR</SelectItem>
+                <SelectItem value="hi">HI</SelectItem>
+                <SelectItem value="kn">KN</SelectItem>
+              </SelectContent>
+            </Select>
+
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => setTheme(theme === "dark" || theme === "system" && window.matchMedia('(prefers-color-scheme: dark)').matches ? "light" : "dark")}
+              className="w-8 h-8"
+            >
+              <Sun className="h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+              <Moon className="absolute h-4 w-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+            </Button>
+
+            <Button variant="ghost" size="sm" onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="p-1">
               {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </Button>
           </div>
@@ -276,7 +299,33 @@ export function Header() {
         {/* Mobile Navigation */}
         {mobileMenuOpen && (
           <div className="lg:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 border-t">
+            <div className="px-2 pt-2 pb-6 space-y-1 sm:px-3 border-t">
+              {/* Mobile Quick Settings (Inside menu too for accessibility) */}
+              <div className="flex items-center justify-between px-3 py-4 border-b border-gray-100 dark:border-zinc-800 mb-2">
+                <span className="text-sm font-medium text-gray-500">{t("nav.settings") || "Settings"}</span>
+                <div className="flex items-center gap-3">
+                   {/* Theme Toggle in Menu */}
+                   <div className="flex items-center gap-2 bg-gray-100 dark:bg-zinc-900 p-1 rounded-lg">
+                      <Button 
+                        variant={theme === "light" ? "secondary" : "ghost"} 
+                        size="sm" 
+                        className="h-8 w-8 p-0" 
+                        onClick={() => setTheme("light")}
+                      >
+                        <Sun className="h-4 w-4" />
+                      </Button>
+                      <Button 
+                        variant={theme === "dark" ? "secondary" : "ghost"} 
+                        size="sm" 
+                        className="h-8 w-8 p-0" 
+                        onClick={() => setTheme("dark")}
+                      >
+                        <Moon className="h-4 w-4" />
+                      </Button>
+                   </div>
+                </div>
+              </div>
+
               {currentNavItems.map((item) =>
                 item.children ? (
                   <MobileDropdown key={item.label} item={item as NavItem & { children: NonNullable<NavItem["children"]> }} />
