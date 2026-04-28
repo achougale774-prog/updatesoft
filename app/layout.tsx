@@ -37,12 +37,12 @@ export default function RootLayout({
           <LanguageProvider>
             {children}
             <FloatingWhatsApp />
+            <FloatingAudio />
           </LanguageProvider>
         </ThemeProvider>
       </body>
     </html>
   )
-}
 
 
 

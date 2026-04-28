@@ -267,6 +267,23 @@ export function Header() {
 
           {/* Mobile menu and settings */}
           <div className="lg:hidden flex items-center gap-2">
+            {/* Mobile Audio Button */}
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => {
+                const text = language === 'mr' 
+                  ? "विनसॉफ्ट सॉफ्टवेअर माहिती ऐका. आम्ही डेअरी, शुगर आणि गोल्ड उद्योगांसाठी सॉफ्टवेअर देतो."
+                  : "Listen to Winsoft software info. We provide software for Dairy, Sugar, and Gold industries."
+                const utterance = new SpeechSynthesisUtterance(text)
+                utterance.lang = language === 'mr' ? 'mr-IN' : 'en-US'
+                window.speechSynthesis.speak(utterance)
+              }}
+              className="w-8 h-8 text-orange-600"
+            >
+              <Volume2 className="w-5 h-5" />
+            </Button>
+
             <Select value={language} onValueChange={(val: any) => setLanguage(val)}>
               <SelectTrigger className="w-[100px] h-8 text-xs px-2">
                 <Globe className="w-3 h-3 mr-1" />
