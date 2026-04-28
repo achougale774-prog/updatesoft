@@ -5,6 +5,7 @@ import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { LanguageProvider } from "@/components/language-provider"
 import { FloatingWhatsApp } from "@/components/floating-whatsapp"
+import { FloatingAudio } from "@/components/floating-audio"
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -43,6 +44,4 @@ export default function RootLayout({
       </body>
     </html>
   )
-
-
-
+}
