@@ -7,7 +7,7 @@ import Link from "next/link"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
-import { ChevronRight, ArrowLeft, Headphones, Mail, Calendar } from "lucide-react"
+import { ChevronRight, ArrowLeft, Headphones, Mail, Calendar, Play } from "lucide-react"
 import { useLanguage } from "@/components/language-provider"
 import { WhatsAppButton } from "@/components/whatsapp-button"
 import { AudioButton } from "@/components/audio-button"
@@ -40,7 +40,7 @@ export default function ProductDetailPage() {
         t("product.prod1About5"),
       ],
       images: ["/modern-office-dashboard.png", "/modern-dairy-farm.png", "/indian-software-office-collaboration.png"],
-      videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ", // Placeholder video
+      videoUrl: "/dairy.mp4",
     },
     "2": {
       id: 2,
@@ -64,7 +64,7 @@ export default function ProductDetailPage() {
         t("product.prod2About5"),
       ],
       images: ["/indian-software-office-collaboration.png", "/modern-office-dashboard.png"],
-      videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ", // Placeholder video
+      videoUrl: "/gold.mp4",
     },
     "3": {
       id: 3,
@@ -90,14 +90,14 @@ export default function ProductDetailPage() {
         t("product.prod3About5"),
       ],
       images: ["/modern-dairy-farm.png", "/indian-software-office-collaboration.png"],
-      videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ", // Placeholder video
+      videoUrl: "/suge.mp4",
     }
 
   }), [t, language])
 
   const product = productsData[productId] || productsData["1"]
 
-  const [mainImage, setMainImage] = useState(product.images[0])
+  const [activeMedia, setActiveMedia] = useState({ type: 'video', url: product.videoUrl })
   const [selectedVariant, setSelectedVariant] = useState(product.variants[0])
 
   const variantsText = product.variants.join(", ")
@@ -133,22 +133,60 @@ export default function ProductDetailPage() {
       <main className="max-w-7xl mx-auto px-4 py-12">
         <div className="flex flex-col lg:flex-row gap-12">
           
-          {/* LEFT SECTION (IMAGE GALLERY) */}
+          {/* LEFT SECTION (MEDIA GALLERY) */}
           <div className="w-full lg:w-5/12 space-y-6">
-            <div className="relative w-full aspect-[4/3] border border-gray-200 dark:border-zinc-800 rounded-3xl p-6 bg-gray-50 flex items-center justify-center overflow-hidden shadow-sm dark:shadow-none">
-              <Image
-                src={mainImage}
-                alt={product.title}
-                fill
-                className="object-contain p-4"
-              />
+            <div className="relative w-full aspect-[4/3] border border-gray-200 dark:border-zinc-800 rounded-3xl overflow-hidden bg-black flex items-center justify-center shadow-lg dark:shadow-none">
+              {activeMedia.type === 'video' ? (
+                activeMedia.url.startsWith('http') ? (
+                  <iframe
+                    className="w-full h-full"
+                    src={activeMedia.url}
+                    title="Product Video"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  ></iframe>
+                ) : (
+                  <video 
+                    className="w-full h-full" 
+                    controls 
+                    autoPlay 
+                    muted 
+                    loop 
+                    playsInline
+                  >
+                    <source src={activeMedia.url} type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                )
+              ) : (
+                <Image
+                  src={activeMedia.url}
+                  alt={product.title}
+                  fill
+                  className="object-contain p-4"
+                />
+              )}
             </div>
-            <div className="flex gap-4">
+            <div className="flex flex-wrap gap-4">
+              {/* Video Thumbnail */}
+              {product.videoUrl && (
+                <div 
+                  className={`relative w-20 h-20 border-2 rounded-2xl cursor-pointer overflow-hidden transition-all flex items-center justify-center bg-zinc-900 ${activeMedia.type === 'video' ? 'border-purple-600 shadow-md scale-105' : 'border-gray-200 dark:border-zinc-800 hover:border-purple-300'}`}
+                  onClick={() => setActiveMedia({ type: 'video', url: product.videoUrl })}
+                >
+                  <div className="absolute inset-0 bg-black/40 z-10 flex items-center justify-center">
+                    <Play className="w-8 h-8 text-white fill-white" />
+                  </div>
+                  {product.images[0] && <Image src={product.images[0]} alt="Video Thumbnail" fill className="object-cover opacity-50" />}
+                </div>
+              )}
+              
+              {/* Image Thumbnails */}
               {product.images.map((img: string, idx: number) => (
                 <div 
                   key={idx}
-                  className={`relative w-20 h-20 border-2 rounded-2xl cursor-pointer overflow-hidden transition-all ${mainImage === img ? 'border-purple-600 shadow-md dark:shadow-none scale-105' : 'border-gray-200 dark:border-zinc-800 hover:border-purple-300'}`}
-                  onClick={() => setMainImage(img)}
+                  className={`relative w-20 h-20 border-2 rounded-2xl cursor-pointer overflow-hidden transition-all ${activeMedia.type === 'image' && activeMedia.url === img ? 'border-purple-600 shadow-md dark:shadow-none scale-105' : 'border-gray-200 dark:border-zinc-800 hover:border-purple-300'}`}
+                  onClick={() => setActiveMedia({ type: 'image', url: img })}
                 >
                   <Image src={img} alt="Thumbnail" fill className="object-cover" />
                 </div>
@@ -273,33 +311,8 @@ export default function ProductDetailPage() {
           </div>
         </div>
 
-        {/* VIDEO SECTION */}
-        {product.videoUrl && (
-          <div className="mt-24 pt-16 border-t border-gray-100 dark:border-zinc-800">
-            <div className="max-w-3xl mx-auto text-center space-y-6 mb-16">
-              <h2 className="text-4xl font-bold tracking-tight text-gray-900 dark:text-zinc-100">
-                {t("product.videoTitle")}
-              </h2>
-              <div className="h-1 w-20 bg-purple-600 mx-auto rounded-full" />
-              <p className="text-lg text-gray-500 dark:text-zinc-400 leading-relaxed">
-                {t("product.videoDesc")}
-              </p>
-            </div>
-            
-            <div className="max-w-5xl mx-auto relative group">
-              <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-[2.5rem] blur opacity-25 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
-              <div className="relative aspect-video rounded-[2rem] overflow-hidden shadow-2xl border border-white/10 bg-black">
-                <iframe
-                  className="w-full h-full"
-                  src={product.videoUrl}
-                  title={product.videoTitle}
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
-              </div>
-            </div>
-          </div>
-        )}
+        {/* ADDITIONAL CONTENT SECTION (Optional spacer) */}
+        <div className="mt-12"></div>
       </main>
 
       <Footer />
