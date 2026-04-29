@@ -6,6 +6,7 @@ import Autoplay from 'embla-carousel-autoplay'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import Image from 'next/image'
+import Link from 'next/link'
 import { useLanguage } from '@/components/language-provider'
 
 export function HeroSlider() {
@@ -58,9 +59,10 @@ export function HeroSlider() {
     <div className="relative overflow-hidden group" ref={emblaRef}>
       <div className="flex">
         {slides.map((slide) => (
-          <div 
+          <Link 
             key={slide.id} 
-            className={`flex-[0_0_100%] min-w-0 relative h-[400px] bg-gradient-to-r ${slide.bgColor} flex items-center`}
+            href={`/product/${slide.id}`}
+            className={`flex-[0_0_100%] min-w-0 relative h-[320px] bg-gradient-to-r ${slide.bgColor} flex items-center cursor-pointer transition-opacity hover:opacity-95`}
           >
             <div className="container mx-auto px-12 grid grid-cols-1 md:grid-cols-2 items-center gap-8">
                {/* Left Content */}
@@ -88,8 +90,7 @@ export function HeroSlider() {
                 </div>
               </div>
 
-              {/* Right Image */}
-              <div className="relative h-[300px] hidden md:block">
+              <div className="relative h-[250px] hidden md:block">
                 <Image 
                   src={slide.image} 
                   alt={slide.mainHeading} 
@@ -98,7 +99,7 @@ export function HeroSlider() {
                 />
               </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
 

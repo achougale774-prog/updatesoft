@@ -47,15 +47,6 @@ export default function HomePage() {
       <HeroSlider />
 
       <main className="max-w-7xl mx-auto px-4 py-24 relative z-10">
-        <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 tracking-tight">
-            <span className="text-gradient drop-shadow-sm">{t("home.coreSolutionsTitle")}</span>
-          </h1>
-          <p className="text-xl text-gray-600 dark:text-zinc-400 max-w-3xl mx-auto leading-relaxed">
-            {t("home.coreSolutionsDesc")}
-          </p>
-        </div>
-
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {products.map((product) => (
             <Card key={product.id} className="glass-card hover-lift p-8 flex flex-col justify-between min-h-[480px] group border-t border-white/40 dark:border-zinc-800/50">
