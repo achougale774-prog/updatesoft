@@ -1,0 +1,28 @@
+[
+  {
+    "id": 1777522702534,
+    "created_at": "2026-04-30T04:18:22.534Z",
+    "name": "abhiiii chougale",
+    "email": "winsoft20@gmail.com",
+    "company": "Win Soft",
+    "phone": null,
+    "industry": "dairy",
+    "current_challenges": "ghgh",
+    "preferred_date": "2026-04-30",
+    "preferred_time": "10:00",
+    "status": "pending"
+  },
+  {
+    "id": 1777523739691,
+    "created_at": "2026-04-30T04:35:39.691Z",
+    "name": "abhiiii chougale",
+    "email": "winsoft20@gmail.com",
+    "company": "Win Soft",
+    "phone": null,
+    "industry": "dairy",
+    "current_challenges": "asxax",
+    "preferred_date": "2026-04-30",
+    "preferred_time": "11:00",
+    "status": "pending"
+  }
+]

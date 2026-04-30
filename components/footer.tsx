@@ -13,8 +13,14 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Company Info */}
           <div className="lg:col-span-1">
-            <div className="text-2xl font-sans font-bold text-white mb-4">
-              <Link href="/">Winsoft</Link>
+            <div className="mb-4">
+              <Link href="/">
+                <img 
+                  src="/winsoftlogo.jpg" 
+                  alt="Winsoft Logo" 
+                  className="h-12 w-auto object-contain brightness-0 invert" 
+                />
+              </Link>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed mb-6">
               {t("footer.about")}

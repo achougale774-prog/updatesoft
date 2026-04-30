@@ -212,8 +212,12 @@ export function Header() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <Link href="/" className="text-2xl font-sans font-bold" style={{ color: "var(--primary)" }}>
-              Winsoft
+            <Link href="/" className="flex items-center">
+              <img 
+                src="/winsoftlogo.jpg" 
+                alt="Winsoft Logo" 
+                className="h-10 w-auto object-contain"
+              />
             </Link>
           </div>
 

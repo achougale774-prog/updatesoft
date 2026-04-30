@@ -1,0 +1,46 @@
+[
+  {
+    "id": 1777521628918,
+    "created_at": "2026-04-30T04:00:28.918Z",
+    "name": "abhishek",
+    "email": "abhishekchougale038@gmail.com",
+    "phone": "9325519485",
+    "company": "abhishek chougale",
+    "inquiry_type": "dairy",
+    "message": "sasa",
+    "status": "new"
+  },
+  {
+    "id": 1777521895091,
+    "created_at": "2026-04-30T04:04:55.091Z",
+    "name": "rutuja ",
+    "email": "rutu@gmail.com",
+    "phone": "0987654321",
+    "company": "patil",
+    "inquiry_type": "general",
+    "message": "rutuja ",
+    "status": "new"
+  },
+  {
+    "id": 1777522499131,
+    "created_at": "2026-04-30T04:14:59.131Z",
+    "name": "ayush patil",
+    "email": "ayush@gmail.com",
+    "phone": "9325519485",
+    "company": "ayush",
+    "inquiry_type": "dairy",
+    "message": "dairy project requirment ",
+    "status": "new"
+  },
+  {
+    "id": 1777523816544,
+    "created_at": "2026-04-30T04:36:56.544Z",
+    "name": "ramesh patil",
+    "email": "ramesh@gmail.com",
+    "phone": "0987654321",
+    "company": "ramesh",
+    "inquiry_type": "general",
+    "message": "qsa",
+    "status": "new"
+  }
+]
