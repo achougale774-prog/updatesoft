@@ -29,6 +29,11 @@ const navItems = (t: (key: string) => string) => [
         description: t("footer.productsDesc"),
       },
       {
+        href: "/mobile-software",
+        title: "Mobile Software (Sankalan)",
+        description: "Complete Mobile App for Dairy Management",
+      },
+      {
         href: "/dairy-solutions",
         title: t("nav.dairy"),
         description: t("dairy.dairySubtitle"),
