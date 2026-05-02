@@ -42,7 +42,7 @@ export default function SocialMediaPage() {
             </a>
 
             {/* Instagram */}
-            <a href="https://instagram.com/winsoft" target="_blank" rel="noopener noreferrer" 
+            <a href="https://www.instagram.com/winsoft_kolhapur?igsh=NDdiZjR2YzVlM2l4" target="_blank" rel="noopener noreferrer" 
                className="group relative overflow-hidden bg-white dark:bg-zinc-950 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-zinc-800 p-8 flex items-center gap-6">
               <div className="absolute inset-0 bg-gradient-to-r from-[#dc2743]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               <div className="bg-gradient-to-tr from-[#f09433] via-[#dc2743] to-[#bc1888] text-white p-4 rounded-xl shadow-lg shadow-[#dc2743]/40 group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
