@@ -22,11 +22,154 @@ export default function MobileSoftwarePage() {
   }, [emblaApi])
 
   const screenshots = [
-    { id: 1, title: "Milk Collection", desc: "Easy milk collection with FAT/SNF calculation", color: "bg-blue-500" },
-    { id: 2, title: "Farmer Payment", desc: "Automated payment and billing for farmers", color: "bg-green-500" },
-    { id: 3, title: "Reporting", desc: "Detailed PDF reports and print receipts", color: "bg-purple-500" },
-    { id: 4, title: "Customer Management", desc: "Add and manage customer details easily", color: "bg-orange-500" },
-    { id: 5, title: "Vehicle Routing", desc: "Track collection vehicles efficiently", color: "bg-teal-500" },
+    { 
+      id: 1, 
+      title: "Milk Collection", 
+      desc: "Real-time FAT/SNF testing & data entry", 
+      color: "from-blue-600 to-indigo-700",
+      content: (
+        <div className="w-full space-y-4">
+          <div className="bg-white/10 p-4 rounded-2xl text-left border border-white/20">
+            <div className="text-[10px] uppercase opacity-70 mb-1 font-sans">Current Entry</div>
+            <div className="flex justify-between items-end">
+              <div>
+                <div className="text-xl font-bold font-sans">12.50 Ltr</div>
+                <div className="text-[10px] opacity-70 font-sans">Cow Milk</div>
+              </div>
+              <div className="text-right">
+                <div className="text-lg font-bold font-sans">₹ 531.25</div>
+                <div className="text-[10px] text-green-400 font-sans">Rate: ₹42.50</div>
+              </div>
+            </div>
+          </div>
+          <div className="grid grid-cols-2 gap-2">
+            <div className="bg-white/10 p-2 rounded-xl border border-white/20">
+              <div className="text-[10px] opacity-70 font-sans">FAT</div>
+              <div className="text-lg font-bold font-sans">4.2</div>
+            </div>
+            <div className="bg-white/10 p-2 rounded-xl border border-white/20">
+              <div className="text-[10px] opacity-70 font-sans">SNF</div>
+              <div className="text-lg font-bold font-sans">8.5</div>
+            </div>
+          </div>
+          <Button className="w-full bg-white text-blue-600 font-bold h-10 rounded-xl text-sm font-sans">Save Entry</Button>
+        </div>
+      )
+    },
+    { 
+      id: 2, 
+      title: "Farmer Dashboard", 
+      desc: "Manage profiles & collection history", 
+      color: "from-green-600 to-emerald-700",
+      content: (
+        <div className="w-full space-y-3">
+          {[
+            { name: "Jaywant Lavte", id: "F-102", ltr: "15.2 L" },
+            { name: "Sanjay Patil", id: "F-105", ltr: "10.8 L" },
+            { name: "Rahul Deshmukh", id: "F-110", ltr: "22.1 L" }
+          ].map((f, i) => (
+            <div key={i} className="bg-white/10 p-3 rounded-xl flex justify-between items-center border border-white/10">
+              <div className="text-left">
+                <div className="text-sm font-bold font-sans">{f.name}</div>
+                <div className="text-[10px] opacity-70 font-sans">{f.id}</div>
+              </div>
+              <div className="text-sm font-bold bg-white/20 px-2 py-1 rounded-lg font-sans">{f.ltr}</div>
+            </div>
+          ))}
+          <div className="text-[10px] opacity-70 pt-2 font-sans">+ 124 more farmers</div>
+        </div>
+      )
+    },
+    { 
+      id: 3, 
+      title: "Payment Receipts", 
+      desc: "Instant digital receipts via WhatsApp", 
+      color: "from-purple-600 to-violet-700",
+      content: (
+        <div className="w-full bg-white text-gray-900 rounded-2xl p-4 shadow-xl">
+          <div className="border-b border-dashed border-gray-200 pb-3 mb-3 text-center">
+            <div className="text-sm font-bold font-sans">WINSOFT DAIRY</div>
+            <div className="text-[10px] text-gray-500 font-sans">Collection Receipt</div>
+          </div>
+          <div className="space-y-2 text-xs font-sans">
+            <div className="flex justify-between"><span>Date:</span><span className="font-bold">02/05/2026</span></div>
+            <div className="flex justify-between"><span>Farmer:</span><span className="font-bold">J. Lavte</span></div>
+            <div className="flex justify-between"><span>Qty:</span><span className="font-bold">12.50 L</span></div>
+            <div className="flex justify-between"><span>Amount:</span><span className="font-bold">₹ 531.25</span></div>
+          </div>
+          <div className="mt-4 pt-3 border-t border-gray-100 flex justify-center gap-2">
+            <div className="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center text-green-600">
+              <Smartphone className="w-4 h-4" />
+            </div>
+            <div className="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-blue-600">
+              <Download className="w-4 h-4" />
+            </div>
+          </div>
+        </div>
+      )
+    },
+    { 
+      id: 4, 
+      title: "Milk Analysis", 
+      desc: "Detailed reports & trends", 
+      color: "from-orange-500 to-red-600",
+      content: (
+        <div className="w-full space-y-4">
+          <div className="flex justify-between items-center px-2">
+            <div className="text-sm font-bold font-sans">Weekly Stats</div>
+            <div className="text-[10px] bg-white/20 px-2 py-1 rounded-full text-white font-sans">Last 7 Days</div>
+          </div>
+          <div className="h-24 flex items-end justify-around gap-1 px-2">
+            {[40, 70, 45, 90, 65, 80, 55].map((h, i) => (
+              <div key={i} className="w-full bg-white/30 rounded-t-sm relative group" style={{ height: `${h}%` }}>
+                <div className="absolute -top-6 left-1/2 -translate-x-1/2 text-[8px] opacity-0 group-hover:opacity-100 transition-opacity font-sans">{h}L</div>
+              </div>
+            ))}
+          </div>
+          <div className="bg-white/10 p-3 rounded-xl border border-white/20 text-left">
+            <div className="text-[10px] opacity-70 font-sans">Total Collection</div>
+            <div className="text-xl font-bold font-sans">1,245.5 Ltr</div>
+          </div>
+        </div>
+      )
+    },
+    { 
+      id: 5, 
+      title: "Smart Settings", 
+      desc: "Configure rate charts & cattle types", 
+      color: "from-teal-500 to-cyan-600",
+      content: (
+        <div className="w-full space-y-3">
+          <div className="bg-white/10 p-3 rounded-xl text-left border border-white/10 flex items-center gap-3">
+            <div className="w-8 h-8 rounded-lg bg-white/20 flex items-center justify-center">
+              <CheckCircle2 className="w-4 h-4" />
+            </div>
+            <div>
+              <div className="text-xs font-bold font-sans">Buffalo Rate Chart</div>
+              <div className="text-[10px] opacity-70 font-sans">Active - v2.4</div>
+            </div>
+          </div>
+          <div className="bg-white/10 p-3 rounded-xl text-left border border-white/10 flex items-center gap-3">
+            <div className="w-8 h-8 rounded-lg bg-white/20 flex items-center justify-center">
+              <CheckCircle2 className="w-4 h-4" />
+            </div>
+            <div>
+              <div className="text-xs font-bold font-sans">Cow Rate Chart</div>
+              <div className="text-[10px] opacity-70 font-sans">Active - v1.8</div>
+            </div>
+          </div>
+          <div className="bg-white/10 p-3 rounded-xl text-left border border-white/10 flex items-center gap-3 opacity-50">
+             <div className="w-8 h-8 rounded-lg bg-white/20 flex items-center justify-center">
+              <Smartphone className="w-4 h-4" />
+            </div>
+            <div>
+              <div className="text-xs font-bold font-sans">Bluetooth Scale</div>
+              <div className="text-[10px] opacity-70 font-sans">Disconnected</div>
+            </div>
+          </div>
+        </div>
+      )
+    },
   ]
 
   return (
@@ -82,21 +225,22 @@ export default function MobileSoftwarePage() {
                       <div className="absolute top-0 left-1/2 -translate-x-1/2 h-6 w-28 bg-black dark:bg-zinc-800 rounded-b-2xl z-20"></div>
                       
                       {/* Screen Content Mockup */}
-                      <div className={`relative h-full w-full rounded-[1.8rem] overflow-hidden ${screen.color} flex flex-col items-center justify-center p-6 text-white text-center shadow-inner`}>
+                      <div className={`relative h-full w-full rounded-[1.8rem] overflow-hidden bg-gradient-to-br ${screen.color} flex flex-col items-center p-6 text-white text-center shadow-inner pt-12`}>
                         <div className="absolute inset-0 bg-gradient-to-b from-white/10 to-black/30"></div>
-                        <div className="relative z-10 flex flex-col items-center mt-8">
-                          <div className="bg-white/20 p-4 rounded-2xl mb-6 backdrop-blur-sm">
-                            <Smartphone className="w-12 h-12 text-white" />
-                          </div>
-                          <h3 className="text-2xl font-bold mb-3">{screen.title}</h3>
-                          <p className="text-white/90 text-sm leading-relaxed px-2 font-serif">{screen.desc}</p>
+                        
+                        <div className="relative z-10 w-full flex flex-col items-center">
+                          <h3 className="text-xl font-bold mb-1 font-sans">{screen.title}</h3>
+                          <p className="text-white/80 text-[10px] mb-6 font-sans uppercase tracking-wider">{screen.desc}</p>
+                          
+                          {/* Realistic Content */}
+                          {screen.content}
                         </div>
                         
                         {/* Fake bottom navigation bar */}
-                        <div className="absolute bottom-0 left-0 right-0 h-16 bg-black/20 backdrop-blur-md flex items-center justify-around px-4">
-                           <div className="w-8 h-8 rounded-full bg-white/30"></div>
-                           <div className="w-8 h-8 rounded-full bg-white/30"></div>
-                           <div className="w-8 h-8 rounded-full bg-white/30"></div>
+                        <div className="absolute bottom-0 left-0 right-0 h-14 bg-white/10 backdrop-blur-md flex items-center justify-around px-4 border-t border-white/10">
+                           <div className="w-5 h-5 rounded-md bg-white/20"></div>
+                           <div className="w-10 h-1 bg-white/40 rounded-full"></div>
+                           <div className="w-5 h-5 rounded-md bg-white/20"></div>
                         </div>
                       </div>
                     </div>
