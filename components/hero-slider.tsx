@@ -62,9 +62,9 @@ export function HeroSlider() {
           <Link 
             key={slide.id} 
             href={`/product/${slide.id}`}
-            className={`flex-[0_0_100%] min-w-0 relative h-[320px] bg-gradient-to-r ${slide.bgColor} flex items-center cursor-pointer transition-opacity hover:opacity-95`}
+            className={`flex-[0_0_100%] min-w-0 relative min-h-[380px] md:h-[380px] py-12 md:py-0 bg-gradient-to-r ${slide.bgColor} flex items-center cursor-pointer transition-opacity hover:opacity-95`}
           >
-            <div className="container mx-auto px-12 grid grid-cols-1 md:grid-cols-2 items-center gap-8">
+            <div className="container mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 items-center gap-8">
                {/* Left Content */}
                <div className="space-y-4">
                 <h2 className="text-4xl font-bold text-gray-900 dark:text-zinc-100">{slide.mainHeading}</h2>

@@ -353,7 +353,7 @@ export function Header() {
 
         {/* Mobile Navigation */}
         {mobileMenuOpen && (
-          <div className="lg:hidden">
+          <div className="lg:hidden max-h-[calc(100vh-4rem)] overflow-y-auto shadow-xl">
             <div className="px-2 pt-2 pb-6 space-y-1 sm:px-3 border-t">
               {/* Mobile Quick Settings (Inside menu too for accessibility) */}
               <div className="flex items-center justify-between px-3 py-4 border-b border-gray-100 dark:border-zinc-800 mb-2">
