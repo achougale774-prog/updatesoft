@@ -22,7 +22,7 @@ export default function BlogPage() {
       date: "2024-01-15",
       category: t("blog.dairy"),
       readTime: t("blog.readTime").replace("{n}", "8"),
-      image: "/modern-dairy-farm.png",
+      image: "/dairy33.png",
       featured: true,
     },
     {
@@ -33,7 +33,7 @@ export default function BlogPage() {
       date: "2024-01-10",
       category: t("blog.sugar"),
       readTime: t("blog.readTime").replace("{n}", "6"),
-      image: "/sugar-factory-production-line.png",
+      image: "/sugerfac.png",
       featured: true,
     },
     {
@@ -44,7 +44,7 @@ export default function BlogPage() {
       date: "2024-01-05",
       category: t("blog.gold"),
       readTime: t("blog.readTime").replace("{n}", "5"),
-      image: "/jewelry-store-system.png",
+      image: "/goldwin.png",
       featured: false,
     },
     {
@@ -55,7 +55,7 @@ export default function BlogPage() {
       date: "2023-12-28",
       category: t("blog.tech"),
       readTime: t("blog.readTime").replace("{n}", "7"),
-      image: "/modern-office-dashboard.png",
+      image: "/dairy33.png",
       featured: false,
     },
     {

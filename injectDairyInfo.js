@@ -25,7 +25,7 @@ const dairyInfoEn = `
       "appTitle": "📱 Mobile App",
       "appList": ["Daily collection information", "Bills and account statements", "Permanent data storage", "Comparative analysis to help increase milk production"],
       "contactTitle": "📞 Contact",
-      "contactName": "Jaywant Late",
+      "contactName": "Jaywant Lavte",
       "contactPhone": "9890733526 / 7499758896",
       "contactOffice": "Offices: Kolhapur, Belagavi, Islampur, Sangli"
     },`;

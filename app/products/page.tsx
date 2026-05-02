@@ -441,7 +441,7 @@ export default function ProductsPage() {
                                 {t("productsPage.contactSales")}
                             </Button>
                         </Link>
-                        <WhatsAppButton />
+                        <WhatsAppButton productName={t("productsPage.heroTitle")} />
                     </div>
                 </div>
             </section>

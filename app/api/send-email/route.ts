@@ -55,7 +55,7 @@ Check your dashboard for details.
     // 1. WhatsApp Notification via CallMeBot (Requires one-time setup: https://www.callmebot.com/blog/free-api-whatsapp-messages/)
     if (process.env.CALLMEBOT_API_KEY) {
       try {
-        const waPhone = '919325519485' // User's number
+        const waPhone = '919423039902' // User's number
         const waUrl = `https://api.callmebot.com/whatsapp.php?phone=${waPhone}&text=${notificationMessage}&apikey=${process.env.CALLMEBOT_API_KEY}`
         await fetch(waUrl)
         console.log("CallMeBot notification sent")

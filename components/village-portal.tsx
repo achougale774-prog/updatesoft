@@ -47,7 +47,7 @@ export function VillagePortal() {
   }
 
   return (
-    <section className="py-16 bg-gradient-to-b from-white to-purple-50 dark:from-zinc-950 dark:to-zinc-900 overflow-hidden">
+    <section className="py-16 bg-gradient-to-b from-white to-[#E8F4F5] dark:from-zinc-950 dark:to-[#0B7989]/10 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-5xl font-bold text-gray-900 dark:text-zinc-100 mb-4">
@@ -60,11 +60,11 @@ export function VillagePortal() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           {/* Calculator Tool */}
-          <Card className="border-2 border-purple-200 dark:border-purple-900/30 shadow-2xl rounded-[2.5rem] overflow-hidden">
+          <Card className="border-2 border-[#1E94A4]/20 dark:border-[#1E94A4]/30 shadow-2xl rounded-[2.5rem] overflow-hidden">
             <CardContent className="p-8 md:p-12">
               <div className="flex items-center gap-3 mb-8">
-                <div className="p-3 bg-purple-100 dark:bg-purple-900/50 rounded-2xl">
-                  <Calculator className="w-8 h-8 text-purple-600 dark:text-purple-400" />
+                <div className="p-3 bg-[#1E94A4]/10 dark:bg-[#1E94A4]/20 rounded-2xl">
+                  <Calculator className="w-8 h-8 text-[#1E94A4] dark:text-[#22d3ee]" />
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900 dark:text-zinc-100">
                   {t("home.milkCalcTitle")}
@@ -94,7 +94,7 @@ export function VillagePortal() {
                 </div>
                 <Button 
                   onClick={calculateRate}
-                  className="h-16 text-xl bg-purple-600 hover:bg-purple-700 text-white rounded-2xl shadow-lg shadow-purple-200 dark:shadow-none"
+                  className="h-16 text-xl bg-[#1E94A4] hover:bg-[#0B7989] text-white rounded-2xl shadow-lg shadow-[#1E94A4]/20 dark:shadow-none"
                 >
                   {language === 'mr' ? "हिशोब तपासा" : "Calculate Bill"}
                 </Button>
@@ -117,8 +117,8 @@ export function VillagePortal() {
           <div className="grid gap-6">
             <Card className="hover:scale-[1.02] transition-transform cursor-pointer border border-gray-100 dark:border-zinc-800 rounded-[2rem] shadow-lg dark:shadow-none" onClick={playAudioHelp}>
               <CardContent className="p-8 flex items-center gap-6">
-                <div className="p-5 bg-orange-100 dark:bg-orange-900/40 rounded-3xl">
-                  <Volume2 className="w-10 h-10 text-orange-600 dark:text-orange-400" />
+                <div className="p-5 bg-[#0B7989]/10 dark:bg-[#0B7989]/30 rounded-3xl">
+                  <Volume2 className="w-10 h-10 text-[#0B7989] dark:text-[#22d3ee]" />
                 </div>
                 <div>
                   <h4 className="text-xl font-bold mb-1">{t("home.voiceHelpTitle")}</h4>
@@ -127,7 +127,7 @@ export function VillagePortal() {
               </CardContent>
             </Card>
 
-            <Link href="https://wa.me/919423039902" target="_blank">
+            <Link href="https://wa.me/919423039902?text=Hello%2C%20I%20would%20like%20to%20know%20more%20about%20Village%20Portal.%20Thank%20you%20for%20connecting%20with%20Winsoft." target="_blank">
               <Card className="hover:scale-[1.02] transition-transform cursor-pointer border border-gray-100 dark:border-zinc-800 rounded-[2rem] shadow-lg dark:shadow-none bg-green-50/50 dark:bg-green-900/10">
                 <CardContent className="p-8 flex items-center gap-6">
                   <div className="p-5 bg-green-100 dark:bg-green-900/40 rounded-3xl">

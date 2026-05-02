@@ -39,7 +39,7 @@ export default function ProductDetailPage() {
         t("product.prod1About4"),
         t("product.prod1About5"),
       ],
-      images: ["/modern-office-dashboard.png", "/modern-dairy-farm.png", "/indian-software-office-collaboration.png"],
+      images: ["/dairy33.png", "/modern-dairy-farm.png", "/indian-software-office-collaboration.png"],
       videoUrl: "/dairy.mp4",
     },
     "2": {
@@ -63,7 +63,7 @@ export default function ProductDetailPage() {
         t("product.prod2About4"),
         t("product.prod2About5"),
       ],
-      images: ["/indian-software-office-collaboration.png", "/modern-office-dashboard.png"],
+      images: ["/goldwin.png", "/indian-software-office-collaboration.png"],
       videoUrl: "/gold.mp4",
     },
     "3": {
@@ -89,7 +89,7 @@ export default function ProductDetailPage() {
         t("product.prod3About4"),
         t("product.prod3About5"),
       ],
-      images: ["/modern-dairy-farm.png", "/indian-software-office-collaboration.png"],
+      images: ["/sugerfac.png", "/indian-software-office-collaboration.png"],
       videoUrl: "/suge.mp4",
     }
 
@@ -279,7 +279,7 @@ export default function ProductDetailPage() {
                     {t("product.contactSales")}
                   </Button>
                 </Link>
-                <WhatsAppButton className="block" />
+                <WhatsAppButton className="block" productName={product.title} />
               </div>
 
               <div className="pt-6 border-t border-gray-200 dark:border-zinc-800 space-y-4">

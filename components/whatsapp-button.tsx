@@ -3,9 +3,15 @@
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 
-export function WhatsAppButton({ className }: { className?: string }) {
+export function WhatsAppButton({ className, productName }: { className?: string, productName?: string }) {
+  const messageText = productName 
+    ? `Hello, I would like to know more details about ${productName}. Thank you for connecting with Winsoft.`
+    : `Hello, I would like to know more about your software solutions. Thank you for connecting with Winsoft.`;
+
+  const text = encodeURIComponent(messageText);
+
   return (
-    <Link href="https://wa.me/919423039902" target="_blank" className={className}>
+    <Link href={`https://wa.me/919423039902?text=${text}`} target="_blank" className={className}>
       <Button 
         variant="outline" 
         className="border-green-500/30 text-green-600 dark:text-green-400 font-bold py-4 px-6 rounded-xl hover:bg-green-50 dark:hover:bg-green-950/20 transition-all flex items-center justify-center gap-2"

@@ -4,7 +4,7 @@
     "created_at": "2026-04-30T04:00:28.918Z",
     "name": "abhishek",
     "email": "abhishekchougale038@gmail.com",
-    "phone": "9325519485",
+    "phone": "9423039902",
     "company": "abhishek chougale",
     "inquiry_type": "dairy",
     "message": "sasa",
@@ -26,7 +26,7 @@
     "created_at": "2026-04-30T04:14:59.131Z",
     "name": "ayush patil",
     "email": "ayush@gmail.com",
-    "phone": "9325519485",
+    "phone": "9423039902",
     "company": "ayush",
     "inquiry_type": "dairy",
     "message": "dairy project requirment ",
@@ -41,6 +41,28 @@
     "company": "ramesh",
     "inquiry_type": "general",
     "message": "qsa",
+    "status": "new"
+  },
+  {
+    "id": 1777529725677,
+    "created_at": "2026-04-30T06:15:25.677Z",
+    "name": "vivek",
+    "email": "abhishekchougale038@gmail.com",
+    "phone": "9423039902",
+    "company": "kgk",
+    "inquiry_type": "dairy",
+    "message": "mala pahijel aahe ",
+    "status": "new"
+  },
+  {
+    "id": 1777542558809,
+    "created_at": "2026-04-30T09:49:18.809Z",
+    "name": "rakesh",
+    "email": "rak@gmail.com",
+    "phone": "1245446464",
+    "company": "raku",
+    "inquiry_type": "support",
+    "message": "2232",
     "status": "new"
   }
 ]

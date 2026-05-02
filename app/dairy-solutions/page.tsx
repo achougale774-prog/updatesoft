@@ -115,12 +115,12 @@ export default function DairySolutionsPage() {
           <div className="max-w-7xl mx-auto relative z-10">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="max-w-2xl">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-950 text-blue-700 text-sm font-sans font-bold mb-6 border border-blue-100">
-                  <div className="w-2 h-2 rounded-full bg-blue-600 animate-pulse" />
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1E94A4]/10 dark:bg-[#1E94A4]/20 text-[#1E94A4] text-sm font-sans font-bold mb-6 border border-[#1E94A4]/20">
+                  <div className="w-2 h-2 rounded-full bg-[#1E94A4] animate-pulse" />
                   {t("footer.dairySoftware")}
                 </div>
                 <h1 className="text-4xl md:text-7xl font-sans font-bold mb-6 text-gray-900 dark:text-zinc-100 tracking-tight leading-[1.1]">
-                  {t("dairy.dairyTitle")} <span className="text-blue-600">{t("nav.dairy")}</span>
+                  {t("dairy.dairyTitle")} <span className="text-[#1E94A4]">{t("nav.dairy")}</span>
                 </h1>
                 <p className="text-xl text-gray-600 dark:text-zinc-400 font-serif leading-relaxed mb-10 max-w-xl">
                   {t("dairy.dairySubtitle")}
@@ -129,7 +129,7 @@ export default function DairySolutionsPage() {
                   <Link href="/schedule-demo">
                     <Button
                       size="lg"
-                      className="font-sans font-bold px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-xl shadow-lg dark:shadow-none shadow-blue-200"
+                      className="font-sans font-bold px-8 py-4 bg-[#1E94A4] hover:bg-[#0B7989] text-white rounded-xl shadow-lg dark:shadow-none shadow-[#1E94A4]/20"
                     >
                       {t("hero.cta1")}
                     </Button>
@@ -138,7 +138,7 @@ export default function DairySolutionsPage() {
                     <Button
                       variant="outline"
                       size="lg"
-                      className="font-sans font-bold px-8 py-4 bg-transparent border-2 border-slate-200 dark:border-zinc-800 hover:border-blue-600 hover:text-blue-600 rounded-xl"
+                      className="font-sans font-bold px-8 py-4 bg-transparent border-2 border-slate-200 dark:border-zinc-800 hover:border-[#1E94A4] hover:text-[#1E94A4] rounded-xl"
                     >
                       {t("hero.cta2")}
                     </Button>
@@ -191,8 +191,8 @@ export default function DairySolutionsPage() {
                   key={idx}
                   className="bg-white dark:bg-zinc-950 p-8 rounded-3xl border border-slate-100 dark:border-zinc-800 hover:border-blue-200 hover:shadow-xl dark:shadow-none hover:shadow-blue-900/5 transition-all group"
                 >
-                  <div className={`w-14 h-14 rounded-2xl bg-${item.color}-50 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
-                    <item.icon className={`h-7 w-7 text-${item.color}-600`} />
+                  <div className={`w-14 h-14 rounded-2xl bg-${item.color === 'blue' ? '[#1E94A4]/10' : item.color + '-50'} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
+                    <item.icon className={`h-7 w-7 text-${item.color === 'blue' ? '[#1E94A4]' : item.color + '-600'}`} />
                   </div>
                   <h3 className="text-xl font-sans font-bold text-gray-900 dark:text-zinc-100 mb-4">{item.title}</h3>
                   <p className="text-gray-600 dark:text-zinc-400 font-serif text-sm leading-relaxed mb-6">
@@ -238,7 +238,7 @@ export default function DairySolutionsPage() {
               ].map((section, idx) => (
                 <div key={idx} className="bg-white dark:bg-zinc-950 rounded-3xl p-8 border border-slate-200 dark:border-zinc-800 hover:shadow-xl dark:shadow-none transition-all h-full">
                   <div className="flex items-center gap-4 mb-6">
-                    <div className="w-12 h-12 rounded-2xl bg-blue-50 dark:bg-blue-950 text-blue-600 flex items-center justify-center">
+                    <div className="w-12 h-12 rounded-2xl bg-[#1E94A4]/10 dark:bg-[#1E94A4]/20 text-[#1E94A4] flex items-center justify-center">
                       <section.icon className="h-6 w-6" />
                     </div>
                     <h3 className="text-xl font-sans font-bold text-gray-900 dark:text-zinc-100">{section.title}</h3>
@@ -256,18 +256,18 @@ export default function DairySolutionsPage() {
             </div>
             
             {/* Contact Box */}
-            <div className="mt-12 bg-blue-600 rounded-3xl p-8 md:p-12 text-white flex flex-col md:flex-row items-center justify-between">
+            <div className="mt-12 bg-[#1E94A4] rounded-3xl p-8 md:p-12 text-white flex flex-col md:flex-row items-center justify-between">
               <div>
                 <h3 className="text-2xl font-bold font-sans mb-2">{t("dairyInfo.contactTitle")}</h3>
-                <p className="text-blue-100 mb-1 font-serif text-lg">{t("dairyInfo.contactName")}</p>
-                <p className="text-blue-100 font-serif">{t("dairyInfo.contactOffice")}</p>
+                <p className="text-[#E8F4F5] mb-1 font-serif text-lg">{t("dairyInfo.contactName")}</p>
+                <p className="text-[#E8F4F5] font-serif">{t("dairyInfo.contactOffice")}</p>
               </div>
               <div className="mt-6 md:mt-0 text-center md:text-right">
                 <div className="text-3xl font-bold font-sans tracking-wide">
                   {t("dairyInfo.contactPhone")}
                 </div>
                 <Link href="/contact" className="inline-block mt-4">
-                  <Button variant="secondary" className="font-bold text-blue-600 px-8 py-2 rounded-full">
+                  <Button variant="secondary" className="font-bold text-[#1E94A4] px-8 py-2 rounded-full">
                     {t("hero.cta2")}
                   </Button>
                 </Link>
@@ -300,9 +300,9 @@ export default function DairySolutionsPage() {
                     </div>
                   )}
                   <div className="mb-8">
-                    <tier.icon className={`h-12 w-12 ${idx === 1 ? "text-blue-600" : "text-slate-400"} mb-6`} />
+                    <tier.icon className={`h-12 w-12 ${idx === 1 ? "text-[#1E94A4]" : "text-slate-400"} mb-6`} />
                     <h3 className="text-2xl font-sans font-bold text-gray-900 dark:text-zinc-100 mb-2">{tier.name}</h3>
-                    <div className="text-blue-600 font-sans font-bold mb-4">{tier.subtitle}</div>
+                    <div className="text-[#1E94A4] font-sans font-bold mb-4">{tier.subtitle}</div>
                     <p className="text-gray-500 dark:text-zinc-400 font-serif text-sm leading-relaxed">
                       {tier.description}
                     </p>
@@ -324,7 +324,7 @@ export default function DairySolutionsPage() {
                     <Link href="/contact" className="block mt-8">
                       <Button
                         className={`w-full py-6 rounded-xl font-sans font-bold ${
-                          idx === 1 ? "bg-blue-600 hover:bg-blue-700 text-white" : "bg-slate-900 hover:bg-slate-800 text-white"
+                          idx === 1 ? "bg-[#1E94A4] hover:bg-[#0B7989] text-white" : "bg-slate-900 hover:bg-slate-800 text-white"
                         }`}
                       >
                         {t("product.contactSales")}
@@ -384,14 +384,14 @@ export default function DairySolutionsPage() {
               <h2 className="text-3xl md:text-5xl font-sans font-bold text-gray-900 dark:text-zinc-100">
                 {t("product.videoTitle")}
               </h2>
-              <div className="h-1.5 w-20 bg-blue-600 mx-auto rounded-full" />
+              <div className="h-1.5 w-20 bg-[#1E94A4] mx-auto rounded-full" />
               <p className="text-lg text-gray-600 dark:text-zinc-400 font-serif">
                 {t("product.videoDesc")}
               </p>
             </div>
             
             <div className="max-w-5xl mx-auto relative group">
-              <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-[2.5rem] blur opacity-20 group-hover:opacity-30 transition duration-1000 group-hover:duration-200"></div>
+              <div className="absolute -inset-1 bg-gradient-to-r from-[#1E94A4] to-[#22d3ee] rounded-[2.5rem] blur opacity-20 group-hover:opacity-30 transition duration-1000 group-hover:duration-200"></div>
               <div className="relative aspect-video rounded-[2rem] overflow-hidden shadow-2xl border border-white/10 bg-black">
                 <iframe
                   className="w-full h-full"
@@ -433,7 +433,7 @@ export default function DairySolutionsPage() {
                   {t("product.contactSales")}
                 </Button>
               </Link>
-              <WhatsAppButton />
+              <WhatsAppButton productName={t("dairy.dairyTitle")} />
             </div>
           </div>
         </section>

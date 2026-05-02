@@ -93,6 +93,10 @@ const navItems = (t: (key: string) => string) => [
     label: t("nav.contact"),
     href: "/contact",
   },
+  {
+    label: t("nav.socialMedia") !== "nav.socialMedia" ? t("nav.socialMedia") : "Social Media",
+    href: "/social-media",
+  },
 ]
 
 type NavItem = {
@@ -261,7 +265,7 @@ export function Header() {
                 toast.info(toastMsg)
                 speakText(text, language)
               }}
-              className="h-9 px-3 gap-2 border-orange-200 bg-orange-50 dark:bg-orange-950/20 dark:border-orange-900/30 text-orange-700 dark:text-orange-400"
+              className="h-9 px-3 gap-2 border-[#1E94A4]/20 bg-[#1E94A4]/5 dark:bg-[#1E94A4]/10 dark:border-[#1E94A4]/30 text-[#1E94A4] dark:text-[#22d3ee]"
             >
               <Volume2 className="w-4 h-4" />
               <span className="text-xs font-bold">
@@ -313,7 +317,7 @@ export function Header() {
                 toast.info(language === 'mr' ? "माहिती बोलत आहे..." : "Speaking information...")
                 speakText(text, language)
               }}
-              className="w-8 h-8 text-orange-600"
+              className="w-8 h-8 text-[#1E94A4]"
             >
               <Volume2 className="w-5 h-5" />
             </Button>

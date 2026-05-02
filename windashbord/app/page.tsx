@@ -51,9 +51,9 @@ export default function Dashboard() {
         ])
 
         const combined = [
-          ...(contactsRes.data || []).map(c => ({ ...c, lead_type: 'Contact' })),
-          ...(demoRes.data || []).map(d => ({ ...d, lead_type: 'Demo Request' }))
-        ].sort((a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime())
+          ...(contactsRes.data || []).map((c: any) => ({ ...c, lead_type: 'Contact' })),
+          ...(demoRes.data || []).map((d: any) => ({ ...d, lead_type: 'Demo Request' }))
+        ].sort((a: any, b: any) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime())
 
         if (combined.length > 0) {
           setMessages(combined)
@@ -71,7 +71,7 @@ export default function Dashboard() {
     return () => clearInterval(interval)
   }, [])
 
-  const filteredMessages = messages.filter(m => 
+  const filteredMessages = messages.filter((m: any) => 
     m.name.toLowerCase().includes(searchQuery.toLowerCase()) || 
     m.email.toLowerCase().includes(searchQuery.toLowerCase()) ||
     (m.inquiry_type && m.inquiry_type.toLowerCase().includes(searchQuery.toLowerCase())) ||

@@ -27,7 +27,7 @@ export default function CaseStudiesPage() {
         t("caseStudies.study1Result4"),
       ],
       timeline: `6 ${t("caseStudies.timeline") === "कालावधी" ? "महिने" : t("caseStudies.timeline") === "समयरेखा" ? "महीने" : t("caseStudies.timeline") === "ಕಾಲಮಿತಿ" ? "ತಿಂಗಳು" : "months"}`,
-      image: "/modern-dairy-farm.png",
+      image: "/dairy33.png",
       featured: true,
     },
     {
@@ -44,7 +44,7 @@ export default function CaseStudiesPage() {
         t("caseStudies.study2Result4"),
       ],
       timeline: `8 ${t("caseStudies.timeline") === "कालावधी" ? "महिने" : t("caseStudies.timeline") === "समयरेखा" ? "महीನೆ" : t("caseStudies.timeline") === "ಕಾಲಮಿತಿ" ? "ತಿಂಗಳು" : "months"}`,
-      image: "/sugar-factory-production-line.png",
+      image: "/sugerfac.png",
       featured: true,
     },
     {
@@ -61,7 +61,7 @@ export default function CaseStudiesPage() {
         t("caseStudies.study3Result4"),
       ],
       timeline: `4 ${t("caseStudies.timeline") === "कालावधी" ? "महिने" : t("caseStudies.timeline") === "समयरेखा" ? "महीने" : t("caseStudies.timeline") === "ಕಾಲಮಿತಿ" ? "ತಿಂಗಳು" : "months"}`,
-      image: "/jewelry-store-system.png",
+      image: "/goldwin.png",
       featured: false,
     },
     {
@@ -78,7 +78,7 @@ export default function CaseStudiesPage() {
         t("caseStudies.study4Result4"),
       ],
       timeline: `12 ${t("caseStudies.timeline") === "कालावधी" ? "महिने" : t("caseStudies.timeline") === "समयरेखा" ? "महीने" : t("caseStudies.timeline") === "ಕಾಲಮಿತಿ" ? "ತಿಂಗಳು" : "months"}`,
-      image: "/modern-office-dashboard.png",
+      image: "/dairy33.png",
       featured: false,
     },
   ]

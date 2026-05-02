@@ -62,8 +62,8 @@ export default function ContactPage() {
       })
 
       // Construct WhatsApp Message
-      const messageText = `*New Contact Form Submission*\n\n*Name:* ${formData.name}\n*Email:* ${formData.email}\n*Phone:* ${formData.phone}\n*Company:* ${formData.company || "N/A"}\n*Inquiry:* ${formData.inquiryType}\n*Message:* ${formData.message}`
-      const whatsappUrl = `https://wa.me/919325519485?text=${encodeURIComponent(messageText)}`
+      const messageText = `*New Contact Form Submission*\n\n*Name:* ${formData.name}\n*Email:* ${formData.email}\n*Phone:* ${formData.phone}\n*Company:* ${formData.company || "N/A"}\n*Inquiry:* ${formData.inquiryType}\n*Message:* ${formData.message}\n\nThank you for connecting with Winsoft.`
+      const whatsappUrl = `https://wa.me/919423039902?text=${encodeURIComponent(messageText)}`
 
       // Attempt to open WhatsApp
       setTimeout(() => {
@@ -79,16 +79,19 @@ export default function ContactPage() {
 
       console.log("Contact form submitted successfully:", formData)
       setIsSubmitted(true)
-    } catch (err) {
-      console.error("Error submitting form:", err)
-      setError(t("contactPage.errorMsg") || "There was an error submitting your message. Please try again.")
+    } catch (err: any) {
+      console.error("CRITICAL ERROR submitting contact form:", err);
+      if (err.message) console.error("Error Message:", err.message);
+      if (err.details) console.error("Error Details:", err.details);
+      
+      setError(t("contactPage.errorMsg") || `Submission failed: ${err.message || "Unknown error"}. Please try again.`);
     } finally {
       setIsLoading(false)
     }
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-sky-50">
+    <div className="min-h-screen bg-gradient-to-br from-[#E8F4F5] to-white">
       <Header />
 
       <main>
@@ -269,8 +272,8 @@ export default function ContactPage() {
                       <p className="text-green-700 mb-6">If WhatsApp didn't open automatically, click the button below:</p>
                       <Button 
                         onClick={() => {
-                          const messageText = `*New Contact Form Submission*\n\n*Name:* ${formData.name}\n*Email:* ${formData.email}\n*Phone:* ${formData.phone}\n*Company:* ${formData.company || "N/A"}\n*Inquiry:* ${formData.inquiryType}\n*Message:* ${formData.message}`
-                          window.open(`https://wa.me/919325519485?text=${encodeURIComponent(messageText)}`, "_blank")
+                          const messageText = `*New Contact Form Submission*\n\n*Name:* ${formData.name}\n*Email:* ${formData.email}\n*Phone:* ${formData.phone}\n*Company:* ${formData.company || "N/A"}\n*Inquiry:* ${formData.inquiryType}\n*Message:* ${formData.message}\n\nThank you for connecting with Winsoft.`
+                          window.open(`https://wa.me/919423039902?text=${encodeURIComponent(messageText)}`, "_blank")
                         }}
                         className="bg-green-600 hover:bg-green-700 text-white font-bold px-8 py-3 rounded-xl flex items-center justify-center gap-2 mx-auto"
                       >
@@ -291,40 +294,39 @@ export default function ContactPage() {
                 <div className="space-y-8">
                   {/* Phone */}
                   <div className="flex items-start gap-4">
-                    <div className="bg-blue-100 rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0">
+                    <div className="bg-[#1E94A4]/10 rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0">
                       <Phone className="h-6 w-6" style={{ color: "var(--primary)" }} />
                     </div>
                     <div>
                       <h3 className="font-sans font-semibold text-lg mb-2">{t("contactPage.callTitle")}</h3>
-                      <p className="text-gray-700 dark:text-zinc-300 font-serif text-lg">+91 98765 43210</p>
+                      <p className="text-gray-700 dark:text-zinc-300 font-serif text-lg">+91 94230 39902</p>
                     </div>
                   </div>
 
                   {/* Email */}
                   <div className="flex items-start gap-4">
-                    <div className="bg-blue-100 rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0">
+                    <div className="bg-[#1E94A4]/10 rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0">
                       <Mail className="h-6 w-6" style={{ color: "var(--primary)" }} />
                     </div>
                     <div>
                       <h3 className="font-sans font-semibold text-lg mb-2">{t("contactPage.emailTitle")}</h3>
                       <div className="space-y-1 font-serif text-gray-700 dark:text-zinc-300">
-                        <p>sales@winsoft.com</p>
-                        <p>support@winsoft.com</p>
+                        <p>info@winsoft.in</p>
+                        <p>sales@winsoft.in</p>
                       </div>
                     </div>
                   </div>
 
                   {/* Address */}
                   <div className="flex items-start gap-4">
-                    <div className="bg-blue-100 rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0">
+                    <div className="bg-[#1E94A4]/10 rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0">
                       <MapPin className="h-6 w-6" style={{ color: "var(--primary)" }} />
                     </div>
                     <div>
                       <h3 className="font-sans font-semibold text-lg mb-2">{t("contactPage.officeTitle")}</h3>
                       <div className="font-serif text-gray-700 dark:text-zinc-300 leading-relaxed">
-                        <p>123 Business District</p>
-                        <p>Technology Park</p>
-                        <p>Mumbai, Maharashtra 400001</p>
+                        <p>Plot 448, Lane 14B, Hari Om Nagar,</p>
+                        <p>Kolhapur, Maharashtra 416010</p>
                         <p>India</p>
                       </div>
                     </div>
@@ -332,11 +334,38 @@ export default function ContactPage() {
 
                   {/* Business Hours */}
                   <div className="flex items-start gap-4">
-                    <div className="bg-blue-100 rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0">
+                    <div className="bg-[#1E94A4]/10 rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0">
                       <Clock className="h-6 w-6" style={{ color: "var(--primary)" }} />
                     </div>
                     <div>
                       <h3 className="font-sans font-semibold text-lg mb-2">{t("contactPage.workHours")}</h3>
+                      <div className="font-serif text-gray-700 dark:text-zinc-300">
+                        <p>Monday - Saturday: 9:30 AM - 6:30 PM</p>
+                        <p>Sunday: Closed</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Social Media */}
+                  <div className="pt-6 border-t border-gray-200 dark:border-gray-800">
+                    <h3 className="font-sans font-semibold text-xl mb-6" style={{ color: "var(--primary)" }}>Connect With Us</h3>
+                    <div className="flex flex-wrap gap-5">
+                      <a href="https://wa.me/919423039902?text=Hello%2C%20I%20would%20like%20to%20know%20more%20about%20your%20software%20solutions.%20Thank%20you%20for%20connecting%20with%20Winsoft." target="_blank" rel="noopener noreferrer" className="bg-[#25D366] p-3.5 rounded-full text-white hover:bg-[#1EBE5D] hover:-translate-y-1.5 transition-all duration-300 shadow-xl shadow-[#25D366]/30 group hover:shadow-[#25D366]/50">
+                        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" className="group-hover:scale-110 transition-transform"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                        <span className="sr-only">WhatsApp</span>
+                      </a>
+                      <a href="https://instagram.com/winsoft" target="_blank" rel="noopener noreferrer" className="bg-gradient-to-tr from-[#f09433] via-[#dc2743] to-[#bc1888] p-3.5 rounded-full text-white hover:-translate-y-1.5 transition-all duration-300 shadow-xl shadow-[#dc2743]/30 group hover:shadow-[#dc2743]/50">
+                        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" className="group-hover:scale-110 transition-transform"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                        <span className="sr-only">Instagram</span>
+                      </a>
+                      <a href="https://facebook.com/winsoft" target="_blank" rel="noopener noreferrer" className="bg-[#1877F2] p-3.5 rounded-full text-white hover:bg-[#166FE5] hover:-translate-y-1.5 transition-all duration-300 shadow-xl shadow-[#1877F2]/30 group hover:shadow-[#1877F2]/50">
+                        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" className="group-hover:scale-110 transition-transform"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                        <span className="sr-only">Facebook</span>
+                      </a>
+                      <a href="https://linkedin.com/company/winsoft" target="_blank" rel="noopener noreferrer" className="bg-[#0A66C2] p-3.5 rounded-full text-white hover:bg-[#0958A8] hover:-translate-y-1.5 transition-all duration-300 shadow-xl shadow-[#0A66C2]/30 group hover:shadow-[#0A66C2]/50">
+                        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" className="group-hover:scale-110 transition-transform"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                        <span className="sr-only">LinkedIn</span>
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -351,14 +380,16 @@ export default function ContactPage() {
             <h2 className="text-3xl font-sans font-bold text-center mb-8" style={{ color: "var(--primary)" }}>
               {t("contactPage.findUs")}
             </h2>
-            <div className="bg-white dark:bg-zinc-950 rounded-lg shadow-lg dark:shadow-none overflow-hidden">
-              <div className="aspect-video bg-gray-200 flex items-center justify-center">
-                <div className="text-center">
-                  <MapPin className="h-12 w-12 mx-auto mb-4 text-gray-400" />
-                  <p className="text-gray-600 dark:text-zinc-400 font-serif">Interactive Google Map</p>
-                  <p className="text-sm text-gray-500 dark:text-zinc-400 font-serif">123 Business District, Technology Park, Mumbai</p>
-                </div>
-              </div>
+            <div className="bg-white dark:bg-zinc-950 rounded-lg shadow-lg dark:shadow-none overflow-hidden h-[450px]">
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3821.868349822982!2d74.19894721150493!3d16.68347008437996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc100109f06798b%3A0x5e56e4313f9872be!2sWinsoft%20Software%20Consultancy!5e0!3m2!1sen!2sin!4v1714476000000!5m2!1sen!2sin"
+                width="100%" 
+                height="100%" 
+                style={{ border: 0 }} 
+                allowFullScreen={true} 
+                loading="lazy" 
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
             </div>
           </div>
         </section>

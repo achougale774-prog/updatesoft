@@ -4,41 +4,41 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: oklch(0.99 0.005 220);
-  --foreground: oklch(0.15 0.02 220);
-  --card: oklch(0.98 0.01 220);
-  --card-foreground: oklch(0.15 0.02 220);
-  --popover: oklch(0.98 0.01 220);
-  --popover-foreground: oklch(0.15 0.02 220);
-  /* Updated primary to soft blue */
-  --primary: oklch(0.45 0.15 220);
-  --primary-foreground: oklch(0.98 0.01 220);
-  --secondary: oklch(0.95 0.02 220);
-  --secondary-foreground: oklch(0.25 0.03 220);
-  --muted: oklch(0.96 0.01 220);
-  --muted-foreground: oklch(0.55 0.02 220);
-  /* Updated accent to lighter blue */
-  --accent: oklch(0.65 0.12 210);
-  --accent-foreground: oklch(0.98 0.01 220);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.577 0.245 27.325);
-  --border: oklch(0.92 0.01 220);
-  --input: oklch(0.92 0.01 220);
-  --ring: oklch(0.65 0.12 210);
-  --chart-1: oklch(0.65 0.15 210);
-  --chart-2: oklch(0.55 0.12 200);
-  --chart-3: oklch(0.45 0.1 230);
-  --chart-4: oklch(0.75 0.08 190);
-  --chart-5: oklch(0.6 0.14 240);
-  --radius: 0.625rem;
-  --sidebar: oklch(0.97 0.01 220);
-  --sidebar-foreground: oklch(0.15 0.02 220);
-  --sidebar-primary: oklch(0.45 0.15 220);
-  --sidebar-primary-foreground: oklch(0.98 0.01 220);
-  --sidebar-accent: oklch(0.95 0.02 220);
-  --sidebar-accent-foreground: oklch(0.25 0.03 220);
-  --sidebar-border: oklch(0.92 0.01 220);
-  --sidebar-ring: oklch(0.65 0.12 210);
+  --background: #f4f7f7; /* Soft light teal background */
+  --foreground: #0f172a;
+  --card: #ffffff;
+  --card-foreground: #0f172a;
+  --popover: #ffffff;
+  --popover-foreground: #0f172a;
+  /* Hi-Tech Dairy Primary: #1E94A4 */
+  --primary: #1E94A4;
+  --primary-foreground: #ffffff;
+  --secondary: #E8F4F5;
+  --secondary-foreground: #0B7989;
+  --muted: #f1f5f9;
+  --muted-foreground: #64748b;
+  /* Hi-Tech Dairy Accent/Dark: #0B7989 */
+  --accent: #0B7989;
+  --accent-foreground: #ffffff;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: #e2e8f0;
+  --input: #e2e8f0;
+  --ring: #1E94A4;
+  --chart-1: #1E94A4;
+  --chart-2: #0B7989;
+  --chart-3: #22d3ee;
+  --chart-4: #0891b2;
+  --chart-5: #06b6d4;
+  --radius: 0.75rem;
+  --sidebar: #ffffff;
+  --sidebar-foreground: #0f172a;
+  --sidebar-primary: #1E94A4;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #E8F4F5;
+  --sidebar-accent-foreground: #0B7989;
+  --sidebar-border: #e2e8f0;
+  --sidebar-ring: #1E94A4;
 }
 
 .dark {
@@ -158,7 +158,7 @@
 
 /* Gradient Text */
 .text-gradient {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400;
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-[#1E94A4] to-[#22d3ee] dark:from-[#22d3ee] dark:to-[#1E94A4];
 }
 
 /* Modern Hover Effects */

@@ -140,13 +140,13 @@ export default function GoldIndustrySolutionsPage() {
                   <Link href="/schedule-demo">
                     <Button
                       size="lg"
-                      className="font-sans font-semibold px-8 py-3 bg-amber-600 hover:bg-amber-700 text-white"
+                      className="font-sans font-semibold px-8 py-3 bg-[#1E94A4] hover:bg-[#0B7989] text-white"
                     >
                       {t("hero.cta1")}
                     </Button>
                   </Link>
                   <Link href="/contact">
-                    <Button variant="outline" size="lg" className="font-sans font-semibold px-8 py-3 bg-transparent">
+                    <Button variant="outline" size="lg" className="font-sans font-semibold px-8 py-3 bg-transparent border-[#1E94A4] text-[#1E94A4] hover:bg-[#1E94A4]/5">
                       {t("gold.getInTouch")}
                     </Button>
                   </Link>
@@ -227,7 +227,7 @@ export default function GoldIndustrySolutionsPage() {
                   </div>
                   <div className="p-8 bg-slate-50 dark:bg-black border-t border-slate-100 dark:border-zinc-800">
                     <Link href="/schedule-demo">
-                      <Button className="w-full bg-amber-600 hover:bg-amber-700 text-white font-sans font-semibold">
+                      <Button className="w-full bg-[#1E94A4] hover:bg-[#0B7989] text-white font-sans font-semibold">
                         {t("gold.getDemo")}
                       </Button>
                     </Link>
@@ -306,7 +306,7 @@ export default function GoldIndustrySolutionsPage() {
 
         {/* CTA Section */}
         <section className="py-20 px-4">
-          <div className="max-w-5xl mx-auto bg-gradient-to-r from-amber-500 to-amber-700 rounded-3xl p-12 text-center text-white shadow-2xl">
+          <div className="max-w-5xl mx-auto bg-gradient-to-r from-[#1E94A4] to-[#0B7989] rounded-3xl p-12 text-center text-white shadow-2xl">
             <h2 className="text-3xl md:text-5xl font-sans font-bold mb-6">
               {t("gold.elevateBusinessTitle")}
             </h2>
@@ -315,7 +315,7 @@ export default function GoldIndustrySolutionsPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/schedule-demo">
-                <Button size="lg" className="bg-white dark:bg-zinc-950 text-amber-600 hover:bg-slate-100 font-sans font-bold px-10">
+                <Button size="lg" className="bg-white dark:bg-zinc-950 text-[#1E94A4] hover:bg-slate-100 font-sans font-bold px-10">
                   {t("gold.getStartedNow")}
                 </Button>
               </Link>
@@ -324,7 +324,7 @@ export default function GoldIndustrySolutionsPage() {
                   {t("gold.contactExpert")}
                 </Button>
               </Link>
-              <WhatsAppButton />
+              <WhatsAppButton productName={t("gold.goldHeroTitle")} />
             </div>
           </div>
         </section>

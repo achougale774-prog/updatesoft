@@ -74,7 +74,7 @@ export default function SugarFactorySolutionsPage() {
                   <Link href="/schedule-demo">
                     <Button
                       size="lg"
-                      className="font-sans font-semibold px-8 py-3 bg-red-600 hover:bg-red-700 text-white"
+                      className="font-sans font-semibold px-8 py-3 bg-[#1E94A4] hover:bg-[#0B7989] text-white"
                     >
                       {t("hero.cta1")}
                     </Button>
@@ -93,7 +93,7 @@ export default function SugarFactorySolutionsPage() {
               </div>
               <div className="relative">
                 <Image
-                  src="/sugar-factory-production-line.png"
+                  src="/sugerfac.png"
                   alt="Sugar factory management system"
                   width={600}
                   height={450}
@@ -119,8 +119,8 @@ export default function SugarFactorySolutionsPage() {
             <div className="grid md:grid-cols-4 gap-6">
               {capabilities.map((item, idx) => (
                 <div key={idx} className="bg-white dark:bg-zinc-950 p-6 rounded-2xl shadow-sm dark:shadow-none hover:shadow-md dark:shadow-none transition-shadow flex flex-col items-center text-center">
-                  <div className={`p-4 rounded-xl mb-4 bg-red-50`}>
-                    <item.icon className={`h-8 w-8 text-red-600`} />
+                  <div className={`p-4 rounded-xl mb-4 bg-[#1E94A4]/10`}>
+                    <item.icon className={`h-8 w-8 text-[#1E94A4]`} />
                   </div>
                   <h3 className="font-sans font-bold text-gray-900 dark:text-zinc-100">{item.title}</h3>
                 </div>
@@ -152,7 +152,7 @@ export default function SugarFactorySolutionsPage() {
 
                 <div className="mt-10">
                   <Link href="/schedule-demo">
-                    <Button size="lg" className="bg-red-600 hover:bg-red-700 text-white font-sans font-bold px-10">
+                    <Button size="lg" className="bg-[#1E94A4] hover:bg-[#0B7989] text-white font-sans font-bold px-10">
                       {t("sugar.requestModules")}
                     </Button>
                   </Link>
@@ -268,7 +268,7 @@ export default function SugarFactorySolutionsPage() {
 
         {/* CTA Section */}
         <section className="py-20 px-4">
-          <div className="max-w-4xl mx-auto bg-gradient-to-r from-red-600 to-red-800 rounded-3xl p-12 text-center text-white shadow-2xl relative overflow-hidden">
+          <div className="max-w-4xl mx-auto bg-gradient-to-r from-[#1E94A4] to-[#0B7989] rounded-3xl p-12 text-center text-white shadow-2xl relative overflow-hidden">
             <div className="relative z-10">
               <h2 className="text-3xl md:text-5xl font-sans font-bold mb-6">
                 {t("sugar.modernizeSugarTitle")}
@@ -278,7 +278,7 @@ export default function SugarFactorySolutionsPage() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link href="/schedule-demo">
-                  <Button size="lg" className="bg-white dark:bg-zinc-950 text-red-600 hover:bg-slate-100 font-sans font-bold px-10">
+                  <Button size="lg" className="bg-white dark:bg-zinc-950 text-[#1E94A4] hover:bg-slate-100 font-sans font-bold px-10">
                     {t("sugar.freeERPDemo")}
                   </Button>
                 </Link>
@@ -287,7 +287,7 @@ export default function SugarFactorySolutionsPage() {
                     {t("sugar.connectWithUs")}
                   </Button>
                 </Link>
-                <WhatsAppButton />
+                <WhatsAppButton productName={t("sugar.sugarSystemTitle")} />
               </div>
             </div>
           </div>

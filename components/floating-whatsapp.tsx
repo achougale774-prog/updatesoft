@@ -1,11 +1,29 @@
 "use client"
 
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 
 export function FloatingWhatsApp() {
+  const pathname = usePathname()
+  
+  let productName = ""
+  if (pathname.includes('/dairy')) productName = "Dairy Software Solutions"
+  else if (pathname.includes('/gold')) productName = "Gold & Jewellery Software"
+  else if (pathname.includes('/sugar')) productName = "Sugar Factory ERP"
+  else if (pathname.includes('/product/1')) productName = "Milk Procurement & Billing Software"
+  else if (pathname.includes('/product/2')) productName = "Gold & Jewellery Management"
+  else if (pathname.includes('/product/3')) productName = "Sugar Factory Complete ERP"
+  else if (pathname.includes('/products')) productName = "Winsoft Products"
+
+  const messageText = productName 
+    ? `Hello, I would like to know more details about ${productName}. Thank you for connecting with Winsoft.`
+    : `Hello, I would like to know more about your software solutions. Thank you for connecting with Winsoft.`;
+
+  const text = encodeURIComponent(messageText);
+
   return (
     <Link 
-      href="https://wa.me/919423039902" 
+      href={`https://wa.me/919423039902?text=${text}`} 
       target="_blank"
       className="fixed bottom-8 right-8 z-[60] bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:scale-110 active:scale-95 transition-all flex items-center justify-center group"
       aria-label="Contact us on WhatsApp"

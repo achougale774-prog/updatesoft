@@ -17,13 +17,13 @@ export default function OurStoryPage() {
       year: "1998",
       title: t("story.event1Title"),
       description: t("story.event1Desc"),
-      image: "/modern-dairy-farm.png",
+      image: "/dairy33.png",
     },
     {
       year: "2000s",
       title: t("story.event2Title"),
       description: t("story.event2Desc"),
-      image: "/sugar-factory-production-line.png",
+      image: "/sugerfac.png",
     },
     {
       year: "2005",
@@ -35,13 +35,13 @@ export default function OurStoryPage() {
       year: "2010s",
       title: t("story.event4Title"),
       description: t("story.event4Desc"),
-      image: "/modern-office-dashboard.png",
+      image: "/dairy33.png",
     },
     {
       year: "2018",
       title: t("story.event5Title"),
       description: t("story.event5Desc"),
-      image: "/jewelry-store-system.png",
+      image: "/goldwin.png",
     },
     {
       year: t("nav.today") !== "nav.today" ? t("nav.today") : "Today",
@@ -80,7 +80,7 @@ export default function OurStoryPage() {
 
       <main>
         {/* Hero Section */}
-        <section className="bg-gradient-to-br from-blue-50 to-sky-50 py-20 px-4 sm:px-6 lg:px-8">
+        <section className="bg-gradient-to-br from-[#E8F4F5] to-white py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
@@ -129,7 +129,7 @@ export default function OurStoryPage() {
                         className={`grid lg:grid-cols-2 gap-8 items-center ${index % 2 === 1 ? "lg:grid-flow-col-dense" : ""}`}
                       >
                         <div className={index % 2 === 1 ? "lg:col-start-2" : ""}>
-                          <div className="bg-blue-100 text-blue-600 px-4 py-2 rounded-full text-sm font-semibold inline-block mb-4">
+                          <div className="bg-[#1E94A4]/10 text-[#1E94A4] px-4 py-2 rounded-full text-sm font-semibold inline-block mb-4">
                             {event.year}
                           </div>
                           <h3 className="text-2xl font-bold text-gray-900 dark:text-zinc-100 mb-4 font-sans">{event.title}</h3>
@@ -164,8 +164,8 @@ export default function OurStoryPage() {
               {principles.map((principle, index) => (
                 <Card key={index} className="text-center border-0 shadow-lg dark:shadow-none">
                   <CardContent className="p-8">
-                    <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                      <principle.icon className="w-8 h-8 text-blue-600" />
+                    <div className="w-16 h-16 bg-[#1E94A4]/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                      <principle.icon className="w-8 h-8 text-[#1E94A4]" />
                     </div>
                     <h3 className="text-xl font-bold text-gray-900 dark:text-zinc-100 mb-4 font-sans">{principle.title}</h3>
                     <p className="text-gray-600 dark:text-zinc-400 leading-relaxed">{principle.description}</p>
@@ -177,7 +177,7 @@ export default function OurStoryPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-blue-600">
+        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#1E94A4]">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl font-bold text-white mb-6 font-sans">
               {t("story.ctaTitle")}
@@ -187,7 +187,7 @@ export default function OurStoryPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/schedule-demo">
-                <Button size="lg" className="bg-white dark:bg-zinc-950 text-blue-600 hover:bg-gray-100 dark:hover:bg-zinc-900 font-semibold px-8 py-3">
+                <Button size="lg" className="bg-white dark:bg-zinc-950 text-[#1E94A4] hover:bg-[#E8F4F5] font-semibold px-8 py-3">
                   {t("header.scheduleDemo") !== "header.scheduleDemo" ? t("header.scheduleDemo") : "Schedule Demo"}
                 </Button>
               </Link>
@@ -195,7 +195,7 @@ export default function OurStoryPage() {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="border-white text-white hover:bg-white dark:bg-zinc-950 hover:text-blue-600 font-semibold px-8 py-3 bg-transparent"
+                  className="border-white text-white hover:bg-white dark:bg-zinc-950 hover:text-[#1E94A4] font-semibold px-8 py-3 bg-transparent"
                 >
                   {t("header.contact") !== "header.contact" ? t("header.contact") : "Contact"}
                 </Button>

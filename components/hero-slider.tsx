@@ -19,8 +19,8 @@ export function HeroSlider() {
       mainHeading: t("home.heroSlide1Title"),
       subHeading: t("home.heroSlide1Desc"),
       priceText: t("home.heroSlide1Price"),
-      image: "/modern-dairy-farm.png",
-      bgColor: "from-blue-100 to-white",
+      image: "/dairy33.png",
+      bgColor: "from-[#E8F4F5] to-white",
       discount: t("home.heroSlide1Discount"),
       bank: "BOBCARD & HSBC"
     },
@@ -29,8 +29,8 @@ export function HeroSlider() {
       mainHeading: t("home.heroSlide2Title"),
       subHeading: t("home.heroSlide2Desc"),
       priceText: t("home.heroSlide2Price"),
-      image: "/modern-office-dashboard.png",
-      bgColor: "from-amber-100 to-white",
+      image: "/goldwin.png",
+      bgColor: "from-[#1E94A4]/10 to-white",
       discount: t("home.heroSlide2Discount"),
       bank: "HDFC & SBI"
     },
@@ -39,8 +39,8 @@ export function HeroSlider() {
       mainHeading: t("home.heroSlide3Title"),
       subHeading: t("home.heroSlide3Desc"),
       priceText: t("home.heroSlide3Price"),
-      image: "/indian-software-office-collaboration.png",
-      bgColor: "from-red-100 to-white",
+      image: "/sugerfac.png",
+      bgColor: "from-[#0B7989]/10 to-white",
       discount: t("home.heroSlide3Discount"),
       bank: "ICICI & AXIS"
     }
@@ -69,7 +69,7 @@ export function HeroSlider() {
                <div className="space-y-4">
                 <h2 className="text-4xl font-bold text-gray-900 dark:text-zinc-100">{slide.mainHeading}</h2>
                 <h3 className="text-2xl font-medium text-gray-700 dark:text-zinc-300">{slide.subHeading}</h3>
-                <div className="text-3xl font-bold text-blue-600">
+                <div className="text-3xl font-bold text-[#1E94A4]">
                   {slide.priceText}
                 </div>
                 
@@ -84,7 +84,7 @@ export function HeroSlider() {
                 </div>
 
                 <div className="pt-2">
-                  <Button className="bg-[#FFA41C] hover:bg-[#FA8900] text-black font-bold px-8 py-6 text-lg rounded-md shadow-md dark:shadow-none">
+                  <Button className="bg-[#1E94A4] hover:bg-[#0B7989] text-white font-bold px-8 py-6 text-lg rounded-md shadow-md dark:shadow-none">
                     {t("home.shopNow")}
                   </Button>
                 </div>

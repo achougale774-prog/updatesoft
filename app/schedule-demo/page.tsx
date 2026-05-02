@@ -101,8 +101,8 @@ export default function ScheduleDemo() {
       }
 
       // Construct WhatsApp Message
-      const messageText = `*New Demo Request*\n\n*Name:* ${formData.firstName} ${formData.lastName}\n*Email:* ${formData.email}\n*Company:* ${formData.company}\n*Industry:* ${formData.industry}\n*Phone:* ${formData.phone || "N/A"}\n*Challenges:* ${formData.challenges}\n*Date:* ${formData.preferredDate}\n*Time:* ${formData.preferredTime}`
-      const whatsappUrl = `https://wa.me/919325519485?text=${encodeURIComponent(messageText)}`
+      const messageText = `*New Demo Request*\n\n*Name:* ${formData.firstName} ${formData.lastName}\n*Email:* ${formData.email}\n*Company:* ${formData.company}\n*Industry:* ${formData.industry}\n*Phone:* ${formData.phone || "N/A"}\n*Challenges:* ${formData.challenges}\n*Date:* ${formData.preferredDate}\n*Time:* ${formData.preferredTime}\n\nThank you for connecting with Winsoft.`
+      const whatsappUrl = `https://wa.me/919423039902?text=${encodeURIComponent(messageText)}`
       
       // Attempt to open WhatsApp
       try {
@@ -115,9 +115,14 @@ export default function ScheduleDemo() {
       }
 
       router.push("/schedule-demo/thank-you")
-    } catch (err) {
-      console.error("Error submitting demo request:", err)
-      setError(t("demo.errorMsg") || "There was an error scheduling your demo. Please try again.")
+    } catch (err: any) {
+      console.error("CRITICAL ERROR submitting demo request:", err);
+      // Detailed error logging
+      if (err.message) console.error("Error Message:", err.message);
+      if (err.details) console.error("Error Details:", err.details);
+      if (err.hint) console.error("Error Hint:", err.hint);
+      
+      setError(t("demo.errorMsg") || `Submission failed: ${err.message || "Unknown error"}. Please try again.`);
     } finally {
       setIsLoading(false)
     }

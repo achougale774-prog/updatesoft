@@ -18,19 +18,19 @@ export default function HomePage() {
       id: 1,
       title: t("home.product1Title"),
       description: t("home.product1Desc"),
-      image: "/modern-office-dashboard.png",
+      image: "/dairy33.png",
     },
     {
       id: 2,
       title: t("home.product2Title"),
       description: t("home.product2Desc"),
-      image: "/modern-office-dashboard.png",
+      image: "/goldwin.png",
     },
     {
       id: 3,
       title: t("home.product3Title"),
       description: t("home.product3Desc"),
-      image: "/modern-office-dashboard.png",
+      image: "/sugerfac.png",
     }
   ]
 
@@ -38,9 +38,9 @@ export default function HomePage() {
     <div className="min-h-screen bg-gray-50/50 dark:bg-zinc-950 font-sans relative overflow-hidden">
       {/* Animated Premium Background */}
       <div className="absolute top-0 left-0 w-full h-screen overflow-hidden -z-10 pointer-events-none">
-        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-blue-400/20 dark:bg-blue-600/10 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-3xl opacity-70 animate-blob" />
-        <div className="absolute top-[20%] right-[-10%] w-[50%] h-[50%] bg-purple-400/20 dark:bg-purple-600/10 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-3xl opacity-70 animate-blob animation-delay-2000" />
-        <div className="absolute bottom-[-20%] left-[20%] w-[60%] h-[60%] bg-sky-400/20 dark:bg-sky-600/10 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-3xl opacity-70 animate-blob animation-delay-4000" />
+        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-[#1E94A4]/20 dark:bg-[#1E94A4]/10 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-3xl opacity-70 animate-blob" />
+        <div className="absolute top-[20%] right-[-10%] w-[50%] h-[50%] bg-[#22d3ee]/20 dark:bg-[#22d3ee]/10 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-3xl opacity-70 animate-blob animation-delay-2000" />
+        <div className="absolute bottom-[-20%] left-[20%] w-[60%] h-[60%] bg-[#0B7989]/20 dark:bg-[#0B7989]/10 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-3xl opacity-70 animate-blob animation-delay-4000" />
       </div>
 
       <Header />
@@ -63,7 +63,7 @@ export default function HomePage() {
                   </div>
                 </Link>
 
-                <h3 className="text-2xl font-bold text-gray-900 dark:text-zinc-100 leading-tight mb-4 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                <h3 className="text-2xl font-bold text-gray-900 dark:text-zinc-100 leading-tight mb-4 group-hover:text-[#1E94A4] dark:group-hover:text-[#22d3ee] transition-colors">
                   {product.title}
                 </h3>
                 
@@ -79,7 +79,7 @@ export default function HomePage() {
                   </Button>
                 </Link>
                 <Link href="/schedule-demo" className="block">
-                  <Button className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold py-6 rounded-2xl transition-all shadow-lg hover:shadow-blue-500/25">
+                  <Button className="w-full bg-gradient-to-r from-[#1E94A4] to-[#22d3ee] hover:from-[#0B7989] hover:to-[#1E94A4] text-white font-bold py-6 rounded-2xl transition-all shadow-lg hover:shadow-[#1E94A4]/25">
                     {t("home.requestDemo")}
                   </Button>
                 </Link>
