@@ -14,11 +14,11 @@ export function Footer() {
           {/* Company Info */}
           <div className="lg:col-span-1">
             <div className="mb-4">
-              <Link href="/">
+              <Link href="/" className="inline-block bg-white p-2 rounded-xl">
                 <img 
                   src="/winsoftlogo.jpg" 
                   alt="Winsoft Logo" 
-                  className="h-12 w-auto object-contain brightness-0 invert" 
+                  className="h-10 w-auto object-contain" 
                 />
               </Link>
             </div>
