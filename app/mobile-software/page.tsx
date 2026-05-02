@@ -258,6 +258,97 @@ export default function MobileSoftwarePage() {
           </div>
         </section>
 
+        {/* Pricing Section */}
+        <section id="pricing" className="py-24 px-4 bg-slate-50 dark:bg-zinc-950">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-5xl font-sans font-bold text-gray-900 dark:text-white mb-6">
+                Buy Mobile Dairy Software
+              </h2>
+              <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-lg font-serif">
+                Choose the best plan that fits your dairy collection needs.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+              {[
+                { 
+                  name: "Silver", 
+                  price: "2,000", 
+                  duration: "1 Year", 
+                  color: "border-slate-200", 
+                  iconColor: "text-slate-400",
+                  highlight: false 
+                },
+                { 
+                  name: "Gold", 
+                  price: "3,000", 
+                  duration: "2 Years", 
+                  color: "border-[#1E94A4]", 
+                  iconColor: "text-yellow-500",
+                  highlight: true 
+                },
+                { 
+                  name: "Platinum", 
+                  price: "5,000", 
+                  duration: "5 Years", 
+                  color: "border-slate-800", 
+                  iconColor: "text-indigo-500",
+                  highlight: false 
+                },
+              ].map((plan, i) => (
+                <div 
+                  key={i} 
+                  className={`relative bg-white dark:bg-zinc-900 rounded-3xl p-8 border-2 ${plan.color} shadow-xl transition-all duration-300 hover:-translate-y-2 flex flex-col`}
+                >
+                  {plan.highlight && (
+                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#1E94A4] text-white text-xs font-bold px-4 py-1 rounded-full uppercase tracking-widest">
+                      Most Popular
+                    </div>
+                  )}
+                  <div className="text-center mb-8">
+                    <h3 className={`text-2xl font-bold mb-2 ${plan.iconColor}`}>{plan.name}</h3>
+                    <div className="flex items-center justify-center gap-1">
+                      <span className="text-2xl font-bold text-gray-400 italic">₹</span>
+                      <span className="text-5xl font-bold text-gray-900 dark:text-white">{plan.price}</span>
+                      <span className="text-gray-500 font-medium">/-</span>
+                    </div>
+                    <div className="text-gray-500 mt-2 font-medium">{plan.duration}</div>
+                  </div>
+
+                  <div className="space-y-4 mb-8 flex-grow">
+                    {[
+                      "Customizable Rate Chart",
+                      "Full Customer Support",
+                      "Bluetooth Printer Support",
+                      "Payment Register & SMS",
+                      "Cloud Backup & Security",
+                      "Product Sell/Purchase"
+                    ].map((feat, j) => (
+                      <div key={j} className="flex items-center gap-3 text-sm text-gray-600 dark:text-gray-400">
+                        <CheckCircle2 className="w-5 h-5 text-green-500 shrink-0" />
+                        <span>{feat}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  <Link href="/schedule-demo" className="mt-auto">
+                    <Button 
+                      className={`w-full py-6 rounded-xl font-bold transition-all ${
+                        plan.highlight 
+                          ? "bg-[#1E94A4] hover:bg-[#0B7989] text-white" 
+                          : "bg-slate-100 hover:bg-slate-200 text-slate-800 dark:bg-zinc-800 dark:hover:bg-zinc-700 dark:text-white"
+                      }`}
+                    >
+                      Buy Now
+                    </Button>
+                  </Link>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* Features List */}
         <section className="py-24 px-4 bg-white dark:bg-zinc-950">
           <div className="max-w-4xl mx-auto">
